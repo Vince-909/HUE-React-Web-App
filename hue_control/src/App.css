@@ -1,0 +1,558 @@
+body {
+    padding-top: 100px;
+    min-height: 1080px;
+    background-image: linear-gradient(45deg, orange, rgb(255, 0, 149), blue,indigo, violet);
+    background-color: black;
+    background-size: cover;
+    background-repeat: repeat;
+}
+  
+.appTitle {
+    position: relative;
+    float: left;
+    text-align: center;
+    background-image: linear-gradient(#ccc, #eee);
+    margin: 20px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 600px;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.App {
+    display: table;
+    margin: 0 auto;
+    /*box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2), 0px 16px 40px 0 rgba(0, 0, 0, 0.19);*/
+    width: 640px;
+    padding-top: 20px;
+}
+
+
+.roundedButton {
+    transition: all 200ms ease-out;
+    color: #ddd;
+    background-color: rgb(18, 81, 252);
+    margin:10px;
+    margin-bottom: 5px;
+    height: 20px;
+    border: none;
+    min-width: 50px;
+    border-radius: 15px;
+}
+
+.roundedButton:hover {
+    box-shadow: 0 0 6px rgb(10, 111, 226);
+}
+
+.roundedButton:disabled {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+    background-color: #8291aa;
+    margin-top: 10px;
+    height: 20px;
+    color: white;
+    border: none;
+}
+
+.errorWrapper {
+    position: relative;
+    width: 300px;
+    color: red;
+    height: 35px;
+}
+
+.errorWrapperToken {
+    position: relative;
+    width: 300px;
+    color: red;
+    height: 10px;
+}
+  
+.successWrapper {
+    position: absolute;
+    width: 300px;
+    color: rgb(0, 165, 55)
+}
+
+.configWrapper {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 665px;
+}
+  
+.configContainer {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(#ccc, #eee);
+    text-align: center;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    margin: 20px;
+    min-width: 300px;
+    min-height: 70px;
+}
+
+.toolContainer {
+    position: relative;
+    float: left;
+    background-image: linear-gradient(#ccc, #eee);
+    text-align: center;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    padding: 5px;
+    border-radius: 15px;
+    width: 170px;
+    min-height: 190px;
+}
+
+.deleteContainer {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.groupName {
+    color: black;
+    margin-top: 25px;
+}
+
+.add {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 80px;
+    top: 85px;
+    background-color: #2b79f7;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.add:hover {
+    box-shadow: 0 0 6px rgb(10, 111, 226);
+}
+
+.deleteIcon {
+    transition: all 200ms ease-out;
+    background-image: url("../public/trash.png");
+    background-size: cover;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+  
+.deleteIcon:hover {
+    background-image: url("../public/trash_black.png");
+}
+
+.editContainer {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.editIcon {
+    transition: all 200ms ease-out;
+    background-image: url("../public/editicon.png");
+    background-size: cover;
+    color: white;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+  
+.editIcon:hover {
+    background-image: url("../public/editicon_black.png");
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2) inset;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 6px;
+    bottom: 4px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(rgb(255, 255, 255), silver);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2172f3;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2) inset;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switchContainer {
+    position: relative;
+    padding: 0px;
+}
+
+.colorContainer {
+    position: relative;
+}
+
+.slideContainer {
+    position: relative;
+    float: left;
+    margin-top: 10px;
+}
+
+.groupWrapper {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 660px;
+}
+  
+.createGroupContainer {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(#ccc, #eee);
+    text-align: center;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    margin: 20px;
+    border-radius: 15px;
+    min-width: 170px;
+    min-height: 100px;
+}
+
+.backContainer {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.backIcon {
+    transition: all 200ms ease-out;
+    background-image: url("../public/backicon.png");
+    background-size: cover;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.backIcon:hover {
+    background-image: url("../public/backicon_black.png");
+}
+
+.expandContainer {
+    position: relative;
+    padding-top: 5px;   
+}
+
+.expandIcon {
+    background-image: url("../public/down.png");
+    background-size: cover;
+    color: white;
+    background-color: transparent;
+    width: 30px;
+    height: 20px;
+    border: none;
+}
+  
+.expandIcon:hover {
+    background-image: url("../public/down_black.png");
+}
+
+.collapseIcon {
+    background-image: url("../public/up.png");
+    background-size: cover;
+    color: white;
+    background-color: transparent;
+    width: 30px;
+    height: 20px;
+    border: none;
+}
+  
+.collapseIcon:hover {
+    background-image: url("../public/up_black.png");
+}
+
+.editLightContainer {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.lightContainer {
+    position: relative;
+}
+
+.groupContainer {
+    position: relative;
+}
+
+.scheduleContainer {
+    position: relative;
+    float: left;
+    background-color: #ddd;
+    text-align: center;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    border-radius: 15px;
+    padding: 5px;
+    width: 610px;
+    min-height: 130px;
+    padding-bottom: 20px;
+}
+
+.addSchedule {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    background-color: #2b79f7;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-top: 55px;
+}
+
+.addSchedule:hover {
+    box-shadow: 0 0 6px rgb(10, 111, 226);
+}
+
+.leftc {
+    text-align: right;
+}
+
+.rightc {
+    text-align: left;
+}
+
+.tableWrapper {
+    position: relative;
+    display: table;
+    margin: 0 auto;
+}
+
+input[type='number']{
+    width: 40px;
+} 
+
+.scheduleError {
+    color: red;
+}
+
+.scheduleIconsWrapper {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.scheduleDelete {
+    background-image: url("../public/trash.png");
+    background-size: cover;
+    color: white;
+    background-color: #ddd;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin: 3px;
+}
+
+.scheduleDelete:hover {
+    background-image: url("../public/trash_black.png");
+}
+
+.scheduleEdit {
+    transition: all 200ms ease-out;
+    background-image: url("../public/editicon.png");
+    background-size: cover;
+    color: white;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin: 3px;
+}
+
+.scheduleEdit:hover {
+    background-image: url("../public/editicon_black.png");
+}
+
+.scheduleDetails {
+    position: relative;
+    float: none;
+    margin-top: 35px;
+}
+  
+.nav {
+    width: 620px;
+    margin-left: 20px;
+    margin-right: 0px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-spacing: 0px;
+}
+
+.nav1 {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/light.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav1pressed {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/light.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 5px 0px inset rgba(60, 1, 255, 0.3), 0px 4px 5px 0 rgba(5, 9, 251, 0.19);
+}
+
+.nav2 {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/group.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 15px;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav2pressed {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/group.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 15px;
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 5px 0px inset rgba(60, 1, 255, 0.3), 0px 4px 5px 0 rgba(5, 9, 251, 0.19);
+}
+
+.nav3 {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/schedule.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 15px;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav3pressed {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/schedule.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 15px;
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 5px 0px inset rgba(60, 1, 255, 0.3), 0px 4px 5px 0 rgba(5, 9, 251, 0.19);
+}
+
+.nav4 {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/reset.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.301), 0px 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav4pressed {
+    width: 140px;
+    height: 45px;
+    background-image: url("../public/reset.png");
+    background-color: #ccc;
+    background-size: contain;
+    border-radius: 15px;
+    border : 0px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 5px 0px inset rgba(60, 1, 255, 0.3), 0px 4px 5px 0 rgba(5, 9, 251, 0.19);
+}
+
+.resetTable {
+    margin-top: 20px;
+}
+
+.deleteGroupContainer {
+    margin-top: 40px;
+}
+
+.actualslider {
+    width: 120px;
+}
+
+.sliderRow {
+    vertical-align: baseline;
+}
